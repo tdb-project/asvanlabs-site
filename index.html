@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JiraCorp</title>
+  <meta name="description" content="JiraCorp builds The Data-Bridge (TDB): self-hosted software that gives teams and AI tools governed, audited access to the data they already have.">
+  <link rel="canonical" href="https://jiracorp.co.in/">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jiracorp.co.in/">
+  <meta property="og:title" content="JiraCorp">
+  <meta property="og:description" content="We build The Data-Bridge: governed, audited AI access to the data you already have, on your own infrastructure.">
+  <meta property="og:image" content="https://jiracorp.co.in/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF; --bg-soft: #F8FAFC; --bg-inset: #F1F5F9;
+      --line: #E2E8F0; --line-strong: #CBD5E1;
+      --text: #0F172A; --text-dim: #475569; --text-faint: #64748B;
+      --accent: #4F46E5; --accent-hi: #4338CA; --accent-soft: #EEF2FF; --on-accent: #FFFFFF;
+      --glow: rgba(79,70,229,.09);
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0B1120; --bg-soft: #0F172A; --bg-inset: #1E293B;
+        --line: #1E293B; --line-strong: #334155;
+        --text: #F1F5F9; --text-dim: #CBD5E1; --text-faint: #94A3B8;
+        --accent: #818CF8; --accent-hi: #A5B4FC; --accent-soft: #1E1B4B; --on-accent: #0B1120;
+        --glow: rgba(129,140,248,.12);
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0B1120; --bg-soft: #0F172A; --bg-inset: #1E293B;
+      --line: #1E293B; --line-strong: #334155;
+      --text: #F1F5F9; --text-dim: #CBD5E1; --text-faint: #94A3B8;
+      --accent: #818CF8; --accent-hi: #A5B4FC; --accent-soft: #1E1B4B; --on-accent: #0B1120;
+      --glow: rgba(129,140,248,.12);
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.6; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent-hi); }
+    a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    .wrap { width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 48px); }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -0.01em; margin: 0; }
+    .skip { position: absolute; left: -999px; top: 8px; background: var(--bg); padding: 8px 12px; }
+    .skip:focus { left: 16px; z-index: 10; }
+
+    header { border-bottom: 1px solid var(--line); background: var(--bg); }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+    .word { font-family: var(--serif); font-weight: 700; font-size: 1.45rem; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; }
+    .word .j { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; font-size: 1.1rem; line-height: 1; }
+    .word:hover { color: var(--text); }
+    .bar nav a { color: var(--text-dim); text-decoration: none; font-weight: 500; font-size: .95rem; }
+    .bar nav a:hover { color: var(--text); }
+
+    .hero { background: radial-gradient(900px 480px at 85% -10%, var(--glow), transparent 70%), linear-gradient(180deg, var(--bg-soft), var(--bg)); border-bottom: 1px solid var(--line); }
+    .hero .wrap { padding-top: clamp(64px, 10vw, 128px); padding-bottom: clamp(64px, 9vw, 112px); }
+    .eyebrow { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+    .hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.4rem); line-height: 1.06; max-width: 15ch; }
+    .hero p.lead { font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--text-dim); max-width: 56ch; margin: 24px 0 36px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; border: 1px solid var(--line-strong); color: var(--text); background: var(--bg); }
+    .btn:hover { border-color: var(--text-faint); color: var(--text); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .btn.primary:hover { background: var(--accent-hi); border-color: var(--accent-hi); color: var(--on-accent); }
+
+    section.block { padding: clamp(56px, 8vw, 104px) 0; border-bottom: 1px solid var(--line); }
+    .label { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 14px; }
+    .block h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.15; max-width: 22ch; }
+
+    .product { margin-top: 40px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--bg); }
+    .product .main { padding: clamp(24px, 4vw, 48px); }
+    .tdb { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.15rem; }
+    .tdb .mark { width: 36px; height: 36px; border-radius: 9px; background: #4F46E5; display: grid; place-items: center; }
+    .product h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.2; margin: 22px 0 12px; }
+    .product .main > p { color: var(--text-dim); margin: 0 0 26px; max-width: 52ch; }
+    .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0 0 30px; padding: 0; list-style: none; }
+    .pillars li { border-top: 2px solid var(--accent); padding-top: 12px; }
+    .pillars b { display: block; font-size: .98rem; }
+    .pillars span { color: var(--text-dim); font-size: .9rem; line-height: 1.5; display: block; margin-top: 4px; }
+    .facts { background: var(--bg-soft); border-left: 1px solid var(--line); padding: clamp(24px, 4vw, 48px); margin: 0; }
+    .facts div + div { margin-top: 22px; }
+    .facts dt { font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-faint); }
+    .facts dd { margin: 6px 0 0; color: var(--text); font-size: .98rem; }
+
+    .also { margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .also a { display: block; padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--text); background: var(--bg); }
+    .also a:hover { border-color: var(--line-strong); background: var(--bg-soft); color: var(--text); }
+    .also b { display: block; }
+    .also span { color: var(--text-dim); font-size: .92rem; }
+    .also .tag { float: right; font-size: .75rem; font-weight: 600; color: var(--text-faint); border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; margin-left: 10px; }
+
+    .principles { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+    .principles .n { font-family: var(--serif); font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+    .principles h3 { font-size: 1.35rem; margin: 8px 0 10px; }
+    .principles p { color: var(--text-dim); margin: 0; }
+
+    .contact { background: var(--bg-soft); }
+    .contact .inner { display: flex; align-items: end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .contact p { color: var(--text-dim); margin: 14px 0 0; max-width: 52ch; }
+    .contact .mail { font-family: var(--serif); font-weight: 600; font-size: clamp(1.15rem, 2.4vw, 1.6rem); overflow-wrap: anywhere; }
+
+    footer { padding: 32px 0 40px; color: var(--text-faint); font-size: .9rem; }
+    footer .inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .product { grid-template-columns: 1fr; }
+      .facts { border-left: 0; border-top: 1px solid var(--line); }
+      .principles { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .pillars, .also { grid-template-columns: 1fr; }
+      .bar nav .long { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap bar">
+      <a class="word" href="/" aria-label="JiraCorp home"><span class="j" aria-hidden="true">J</span>JiraCorp</a>
+      <nav aria-label="Primary"><a href="https://tdb.jiracorp.co.in/"><span class="long">The Data-Bridge </span>→</a></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">JiraCorp</p>
+        <h1>Software for governed access to data.</h1>
+        <p class="lead">We build self-hosted infrastructure that lets teams and AI tools use the data they already have, with every query checked, limited and recorded.</p>
+        <div class="row">
+          <a class="btn primary" href="https://tdb.jiracorp.co.in/">Visit The Data-Bridge</a>
+          <a class="btn" href="#contact">Contact us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="product-h">
+      <div class="wrap">
+        <p class="label">Our product</p>
+        <h2 id="product-h">One bridge between your data and the tools that need it.</h2>
+
+        <div class="product">
+          <div class="main">
+            <span class="tdb"><span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M8 11h16M8 16h16M8 21h10" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>The Data-Bridge (TDB)</span>
+            <h3>Register a source once. Query it through SQL, REST and MCP.</h3>
+            <p>TDB turns files, databases and warehouses into a read-only API that people and AI agents reach by a governed name, never by raw credentials.</p>
+            <ul class="pillars">
+              <li><b>Governed</b><span>Read-only SQL, per-key tools, column and row policies.</span></li>
+              <li><b>Audited</b><span>Every query and AI tool call written to a signed log.</span></li>
+              <li><b>Lean by design</b><span>Smaller results for agents, so they spend fewer tokens.</span></li>
+            </ul>
+            <div class="row">
+              <a class="btn primary" href="https://tdb.jiracorp.co.in/">Product site</a>
+              <a class="btn" href="https://docs.tdb.jiracorp.co.in/">Documentation</a>
+              <a class="btn" href="https://github.com/tdb-project/tdb-community">GitHub</a>
+            </div>
+          </div>
+          <dl class="facts">
+            <div><dt>Editions</dt><dd>Community, free and open source (AGPLv3). Enterprise, under a commercial licence.</dd></div>
+            <div><dt>Sources</dt><dd>CSV, Parquet, DuckDB, PostgreSQL, MySQL, SQL Server, Snowflake</dd></div>
+            <div><dt>Interfaces</dt><dd>REST, MCP, and a PostgreSQL wire gateway for existing clients</dd></div>
+            <div><dt>Runs on</dt><dd>Your own servers, as a Docker image</dd></div>
+          </dl>
+        </div>
+
+        <div class="also">
+          <a href="https://marketplace.visualstudio.com/items?itemName=tdb-project.tdb-vscode"><span class="tag">MIT</span><b>TDB for VS Code</b><span>Connect VS Code's AI agents to a TDB server in one step.</span></a>
+          <a href="https://github.com/tdb-project/tdb-connectors"><span class="tag">MIT</span><b>TDB connectors for Claude</b><span>A Claude Code plugin and a Claude Desktop extension.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="approach-h">
+      <div class="wrap">
+        <p class="label">How we work</p>
+        <h2 id="approach-h">Built to be checked, not taken on trust.</h2>
+        <div class="principles">
+          <div><span class="n">01</span><h3>On your infrastructure</h3><p>Our software runs where your data already lives. Nothing is copied to us, and nothing calls home with your data.</p></div>
+          <div><span class="n">02</span><h3>Open at the core</h3><p>The community edition is open source, so you can read the code and try the product before you talk to anyone.</p></div>
+          <div><span class="n">03</span><h3>Security in the open</h3><p>When we fix a security issue, we say so: what it was, who was affected, and what to do. Every update is published.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap inner">
+        <div>
+          <p class="label">Contact</p>
+          <h2 id="contact-h">Talk to us.</h2>
+          <p>For a 30-day evaluation of TDB Enterprise, pricing, or anything else, write to us. A person reads every message.</p>
+        </div>
+        <a class="mail" href="mailto:hello@tdb.jiracorp.co.in">hello@tdb.jiracorp.co.in</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap inner">
+      <span>© 2026 JiraCorp</span>
+      <nav aria-label="Footer">
+        <a href="https://tdb.jiracorp.co.in/">The Data-Bridge</a>
+        <a href="https://docs.tdb.jiracorp.co.in/">Docs</a>
+        <a href="https://docs.tdb.jiracorp.co.in/security/updates/">Security updates</a>
+        <a href="https://github.com/tdb-project">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
