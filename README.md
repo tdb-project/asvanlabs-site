@@ -15,3 +15,15 @@ What it says must be true today: no customer logos, testimonials or numbers that
 - `www` CNAME: `tdb-project.github.io`
 - `tdb` CNAME: `tdb-project.github.io` (the TDB landing page; leave it alone)
 - MX and TXT records are Google Workspace mail; leave them alone.
+
+## Files worth knowing
+
+- `site.js`: menus and the copy button. The page's Content-Security-Policy allows scripts from
+  this site only, so keep scripts in files, not inline.
+- `fonts/`: Geist and JetBrains Mono, self-hosted (OFL). No requests go to Google.
+- `.well-known/security.txt`: the security contact. **Renew `Expires` before 2027-11-09.**
+- `.nojekyll`: needed so GitHub Pages serves `.well-known/`.
+- GitHub Pages API: always send `cname` along with `https_enforced`; a PUT without it removes
+  the custom domain.
+
+Checked 2026-11-09: Lighthouse 100/100/100/100 on mobile and desktop; axe finds no violations.
