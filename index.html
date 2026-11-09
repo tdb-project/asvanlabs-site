@@ -53,8 +53,19 @@
     .bar nav { display: flex; align-items: center; gap: 26px; }
     .bar nav a { color: var(--dim); text-decoration: none; font-size: .93rem; font-weight: 500; }
     .bar nav a:hover { color: var(--ink); }
-    .bar nav a.cta { color: var(--ink); border: 1px solid var(--line-2); border-radius: 8px; padding: 7px 13px; }
-    .bar nav a.cta:hover { border-color: var(--accent); }
+    .menu { position: relative; }
+    .menu summary { list-style: none; cursor: pointer; color: var(--dim); font-size: .93rem; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; padding: 6px 2px; }
+    .menu summary::-webkit-details-marker { display: none; }
+    .menu summary:hover, .menu[open] summary { color: var(--ink); }
+    .menu[open] summary svg { transform: rotate(180deg); }
+    .menu-panel { position: absolute; right: 0; top: calc(100% + 12px); width: min(340px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line-2); border-radius: 12px; padding: 8px; box-shadow: 0 24px 60px -20px rgba(0,0,0,.7); display: grid; gap: 4px; }
+    .bar nav .menu-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px; border-radius: 8px; color: var(--ink); text-decoration: none; }
+    .bar nav .menu-item:hover { background: var(--panel-2); color: var(--ink); }
+    .menu-item .node { font-size: 1.25rem; margin-top: 2px; color: var(--ink); }
+    .menu-item b { display: block; font-size: .95rem; font-weight: 600; }
+    .menu-item .ext { color: var(--faint); font-weight: 400; }
+    .menu-item small { display: block; color: var(--dim); font-size: .84rem; margin-top: 2px; }
+    .menu-soon { display: block; padding: 10px 12px 8px; border-top: 1px solid var(--line); color: var(--faint); font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; }
 
     .hero { position: relative; border-bottom: 1px solid var(--line); background-image: radial-gradient(800px 420px at 78% 10%, rgba(77,124,255,.16), transparent 70%), linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: auto, 32px 32px, 32px 32px; }
     .hero .wrap { padding-block: clamp(56px, 9vw, 112px) clamp(48px, 7vw, 88px); display: grid; gap: clamp(40px, 6vw, 64px); }
@@ -148,7 +159,7 @@
       .principles { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
-      .bar nav a:not(.cta) { display: none; }
+      .bar nav > a { display: none; }
       .pillars, .tools, .metrics { grid-template-columns: 1fr; }
       .metrics div + div { border-left: 0; border-top: 1px solid var(--line); }
       .p-id .status { margin-left: 0; }
@@ -161,10 +172,18 @@
     <div class="wrap bar">
       <a class="wm" href="/" aria-label="JIRACORP home">JIRAC<span class="node" aria-hidden="true"></span>RP</a>
       <nav aria-label="Primary">
-        <a href="#products">Products</a>
+        <details class="menu" id="products-menu">
+          <summary>Products <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></summary>
+          <div class="menu-panel">
+            <a class="menu-item" href="https://tdb.jiracorp.co.in/" target="_blank" rel="noopener">
+              <span class="node" style="--dot: var(--tdb)" aria-hidden="true"></span>
+              <span><b>The Data-Bridge <span class="ext" aria-hidden="true">↗</span></b><small>Governed, audited AI access to your data</small></span>
+            </a>
+            <span class="menu-soon">More products coming soon</span>
+          </div>
+        </details>
         <a href="#approach">Approach</a>
         <a href="#contact">Contact</a>
-        <a class="cta" href="https://tdb.jiracorp.co.in/">The Data-Bridge →</a>
       </nav>
     </div>
   </header>
@@ -299,5 +318,14 @@
       <span>© 2026 JIRACORP</span>
     </div>
   </footer>
+  <script>
+    (function () {
+      var m = document.getElementById("products-menu");
+      if (!m) return;
+      document.addEventListener("click", function (e) { if (m.open && !m.contains(e.target)) m.open = false; });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && m.open) { m.open = false; m.querySelector("summary").focus(); } });
+      m.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { m.open = false; }); });
+    })();
+  </script>
 </body>
 </html>
