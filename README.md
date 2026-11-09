@@ -27,3 +27,4 @@ What it says must be true today: no customer logos, testimonials or numbers that
   the custom domain.
 
 Checked 2026-11-09: Lighthouse 100/100/100/100 on mobile and desktop; axe finds no violations.
+- `count.js`: GoatCounter's counting script (ISC licence), self-hosted so the CSP stays `script-src 'self'`. Counts go to `jiracorp.goatcounter.com`; refresh the file from https://gc.zgo.at/count.js now and then.
