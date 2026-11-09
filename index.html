@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JIRACORP</title>
-  <meta name="description" content="JIRACORP builds data infrastructure software. Our first product, The Data-Bridge (TDB), gives teams and AI tools governed, audited access to the data they already have.">
+  <meta name="description" content="JIRACORP is an early-stage software startup building secure, self-hosted products that close the gaps between data, people and AI. Our first product is The Data-Bridge.">
   <link rel="canonical" href="https://jiracorp.co.in/">
   <meta name="theme-color" content="#070B14">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://jiracorp.co.in/">
   <meta property="og:title" content="JIRACORP">
-  <meta property="og:description" content="Infrastructure for governed AI access to data. Makers of The Data-Bridge.">
+  <meta property="og:description" content="Software that closes the gaps between data, people and AI, with security designed in. Makers of The Data-Bridge.">
   <meta property="og:image" content="https://jiracorp.co.in/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -148,6 +148,26 @@
     footer a { color: var(--dim); text-decoration: none; }
     footer a:hover { color: var(--ink); }
 
+    .hero-grid { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); align-items: center; }
+    .spec { border: 1px solid var(--line-2); border-radius: 12px; background: rgba(14,22,40,.85); font-family: var(--mono); font-size: .86rem; box-shadow: 0 30px 80px -30px rgba(77,124,255,.35); min-width: 0; }
+    .spec-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); color: var(--faint); font-size: .76rem; }
+    .dots { display: inline-flex; gap: 6px; }
+    .dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--line-2); }
+    .spec dl { margin: 0; padding: 14px 18px 18px; display: grid; gap: 10px; }
+    .spec dl div { display: grid; grid-template-columns: 9ch minmax(0, 1fr); gap: 12px; }
+    .spec dt { color: var(--accent-hi); }
+    .spec dt::after { content: ":"; color: var(--faint); }
+    .spec dd { margin: 0; color: var(--ink); }
+    .about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+    .about .head { margin-bottom: 0; }
+    .about-facts { margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); display: grid; }
+    .about-facts div { padding: 18px 22px; display: grid; gap: 4px; }
+    .about-facts div + div { border-top: 1px solid var(--line); }
+    .about-facts dt { font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+    .about-facts dd { margin: 0; }
+    .principles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .p-flow { border-top: 1px solid var(--line); padding: clamp(24px, 4vw, 40px); background: var(--bg-2); overflow-x: auto; }
+
     @media (max-width: 980px) {
       .flow { grid-template-columns: 1fr; gap: 0; }
       .wire { width: 2px; height: 36px; margin: 6px auto; background: repeating-linear-gradient(180deg, var(--accent) 0 6px, transparent 6px 11px); animation: none; }
@@ -156,13 +176,15 @@
       .flow .col .h { grid-column: 1 / -1; }
       .p-top { grid-template-columns: 1fr; }
       .facts { border-left: 0; border-top: 1px solid var(--line); }
-      .principles { grid-template-columns: 1fr; }
+      .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid, .about { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       .bar nav > a { display: none; }
       .pillars, .tools, .metrics { grid-template-columns: 1fr; }
       .metrics div + div { border-left: 0; border-top: 1px solid var(--line); }
       .p-id .status { margin-left: 0; }
+      .principles { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -182,7 +204,8 @@
             <span class="menu-soon">More products coming soon</span>
           </div>
         </details>
-        <a href="#approach">Approach</a>
+        <a href="#about">Who we are</a>
+        <a href="#approach">What drives us</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -190,41 +213,58 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-h">
-      <div class="wrap">
+      <div class="wrap hero-grid">
         <div>
-          <p class="label">JIRACORP · Data infrastructure software</p>
-          <h1 id="hero-h">Infrastructure for governed AI access to data.</h1>
-          <p class="lead">We build self-hosted software that puts your files, databases and warehouses behind one read-only API, so people and AI agents can use your data with every query checked, limited and recorded.</p>
+          <p class="label">JIRACORP · Software startup</p>
+          <h1 id="hero-h">Software that closes the gaps between data, people and AI.</h1>
+          <p class="lead">We are a young software company. We look for the places where teams work around their tools, and we build products that close those gaps, with security designed in from the first line of code.</p>
           <div class="row">
-            <a class="btn primary" href="https://tdb.jiracorp.co.in/">Explore The Data-Bridge</a>
+            <a class="btn primary" href="#products">See our products</a>
             <a class="btn" href="#contact">Talk to us</a>
           </div>
         </div>
+        <div class="spec" aria-label="How every JIRACORP product is built">
+          <div class="spec-head"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>how-we-build.yaml</span></div>
+          <dl>
+            <div><dt>security</dt><dd>by default, not as an add-on</dd></div>
+            <div><dt>runs_on</dt><dd>your infrastructure</dd></div>
+            <div><dt>source</dt><dd>open core</dd></div>
+            <div><dt>access</dt><dd>least privilege, every call recorded</dd></div>
+            <div><dt>claims</dt><dd>measured before published</dd></div>
+            <div><dt>fixes</dt><dd>disclosed in the open</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-        <div class="flow" role="img" aria-label="Diagram: data sources such as PostgreSQL, Snowflake, Parquet and CSV flow into The Data-Bridge, which applies policy and audit, then serves AI agents over MCP, applications over REST and BI tools over the PostgreSQL wire protocol.">
-          <div class="col">
-            <span class="h">Your data</span>
-            <span class="chip">PostgreSQL <em>db</em></span>
-            <span class="chip">MySQL · SQL Server <em>db</em></span>
-            <span class="chip">Snowflake <em>warehouse</em></span>
-            <span class="chip">CSV · Parquet · DuckDB <em>file</em></span>
-          </div>
-          <div class="wire" aria-hidden="true"></div>
-          <div class="core">
-            <span class="name"><span class="node" aria-hidden="true"></span>The Data-Bridge</span>
-            <ul>
-              <li>read-only SQL</li>
-              <li>column &amp; row policies</li>
-              <li>audit log of every call</li>
-            </ul>
-          </div>
-          <div class="wire" aria-hidden="true"></div>
-          <div class="col">
-            <span class="h">Who uses it</span>
-            <span class="chip">AI agents <em>MCP</em></span>
-            <span class="chip">Applications <em>REST</em></span>
-            <span class="chip">psql · BI tools <em>Postgres wire</em></span>
-          </div>
+    <section class="block" id="about" aria-labelledby="about-h">
+      <div class="wrap about">
+        <div class="head">
+          <p class="label">Who we are</p>
+          <h2 id="about-h">A small company with a builder's mindset.</h2>
+          <p>JIRACORP is an early-stage software startup. We are small on purpose: it keeps us close to the code, quick to act on feedback, and focused on doing a few things well.</p>
+          <p>We started with a problem we kept running into. Companies want AI tools to use their data, but the data sits in files, databases and warehouses that were never built to be shared safely. Teams end up writing one-off scripts and handing out credentials. Our first product, The Data-Bridge, is our answer to that, and it shapes how we will build everything after it.</p>
+        </div>
+        <dl class="about-facts">
+          <div><dt>Stage</dt><dd>Early-stage, independent startup</dd></div>
+          <div><dt>Focus</dt><dd>Data infrastructure and tools for AI</dd></div>
+          <div><dt>First product</dt><dd>The Data-Bridge, available now</dd></div>
+          <div><dt>Model</dt><dd>Open-source community editions, commercial enterprise editions</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block" id="approach" aria-labelledby="approach-h">
+      <div class="wrap">
+        <div class="head">
+          <p class="label">What drives us</p>
+          <h2 id="approach-h">Built to be checked, not taken on trust.</h2>
+        </div>
+        <div class="principles">
+          <article><span class="k">innovation</span><h3>Innovation with a purpose</h3><p>We adopt new technology, such as AI agents and the protocols they speak, when it solves a real problem, and we test it before we ship it.</p></article>
+          <article><span class="k">fixing gaps</span><h3>Fixing real gaps</h3><p>We build where existing tools stop short: the manual workarounds, the missing controls, the steps teams repeat by hand.</p></article>
+          <article><span class="k">security</span><h3>Security in our DNA</h3><p>Read-only by default, credentials encrypted, every request logged. We invite independent reviews and publish every security fix.</p></article>
+          <article><span class="k">openness</span><h3>Open and on your terms</h3><p>Our software runs on your own servers, and its core is open source, so you can read the code before you trust it.</p></article>
         </div>
       </div>
     </section>
@@ -233,7 +273,7 @@
       <div class="wrap">
         <div class="head">
           <p class="label">Products</p>
-          <h2 id="products-h">Software that sits between your data and the tools that use it.</h2>
+          <h2 id="products-h">What we have built so far.</h2>
         </div>
 
         <article class="product" aria-labelledby="tdb-h">
@@ -245,52 +285,54 @@
                 <span class="by">by <span class="wm">JIRAC<span class="node" aria-hidden="true"></span>RP</span></span>
                 <span class="status">Available</span>
               </div>
-              <h3>Register a source once. Query it through SQL, REST and MCP.</h3>
-              <p>TDB turns files, databases and warehouses into a governed, read-only API that people and AI agents reach by name, never by raw credentials.</p>
+              <h3>Governed, audited AI access to the data you already have.</h3>
+              <p>Register a source once. People and AI agents then query it through SQL, REST and MCP by name, never by raw credentials.</p>
               <ul class="pillars">
                 <li><b>Governed</b><span>Read-only SQL, per-key tools, column and row policies.</span></li>
                 <li><b>Audited</b><span>Every query and AI tool call recorded; hash-chained in Enterprise.</span></li>
                 <li><b>Lean by design</b><span>Smaller results for agents, so they spend fewer tokens.</span></li>
               </ul>
               <div class="row">
-                <a class="btn primary" href="https://tdb.jiracorp.co.in/">Product site</a>
-                <a class="btn" href="https://docs.tdb.jiracorp.co.in/">Documentation</a>
-                <a class="btn" href="https://github.com/tdb-project/tdb-community">GitHub</a>
+                <a class="btn primary" href="https://tdb.jiracorp.co.in/" target="_blank" rel="noopener">Visit product site ↗</a>
+                <a class="btn" href="https://github.com/tdb-project/tdb-community" target="_blank" rel="noopener">GitHub ↗</a>
               </div>
             </div>
             <dl class="facts">
               <div><dt>Editions</dt><dd>Community, free and open source (AGPLv3). Enterprise, under a commercial licence.</dd></div>
-              <div><dt>Interfaces</dt><dd>REST, MCP, and a PostgreSQL wire gateway for existing clients</dd></div>
               <div><dt>Runs on</dt><dd>Your own servers, as a Docker image</dd></div>
+              <div><dt>Measured</dt><dd>10,412 → 6,868 tokens for 100 rows with Lean Mode</dd></div>
             </dl>
           </div>
-          <div class="metrics">
-            <div><b>7</b><span>source types, from CSV files to Snowflake</span></div>
-            <div><b>3</b><span>ways in: MCP, REST and SQL</span></div>
-            <div><b>10,412 → 6,868</b><span>tokens for 100 rows with Lean Mode, measured</span></div>
+          <div class="p-flow">
+            <div class="flow" role="img" aria-label="Diagram: data sources such as PostgreSQL, Snowflake, Parquet and CSV flow into The Data-Bridge, which applies policy and audit, then serves AI agents over MCP, applications over REST and BI tools over the PostgreSQL wire protocol.">
+              <div class="col">
+                <span class="h">Your data</span>
+                <span class="chip">PostgreSQL <em>db</em></span>
+                <span class="chip">MySQL · SQL Server <em>db</em></span>
+                <span class="chip">Snowflake <em>warehouse</em></span>
+                <span class="chip">CSV · Parquet · DuckDB <em>file</em></span>
+              </div>
+              <div class="wire" aria-hidden="true"></div>
+              <div class="core">
+                <span class="name"><span class="node" aria-hidden="true"></span>The Data-Bridge</span>
+                <ul>
+                  <li>read-only SQL</li>
+                  <li>column &amp; row policies</li>
+                  <li>audit log of every call</li>
+                </ul>
+              </div>
+              <div class="wire" aria-hidden="true"></div>
+              <div class="col">
+                <span class="h">Who uses it</span>
+                <span class="chip">AI agents <em>MCP</em></span>
+                <span class="chip">Applications <em>REST</em></span>
+                <span class="chip">psql · BI tools <em>Postgres wire</em></span>
+              </div>
+            </div>
           </div>
         </article>
 
-        <div class="tools">
-          <a href="https://marketplace.visualstudio.com/items?itemName=tdb-project.tdb-vscode"><b>TDB for VS Code <small>MIT · free</small></b><span>Connect VS Code's AI agents to a TDB server in one step.</span></a>
-          <a href="https://github.com/tdb-project/tdb-connectors"><b>TDB connectors for Claude <small>MIT · free</small></b><span>A Claude Code plugin and a Claude Desktop extension.</span></a>
-        </div>
-
         <div class="soon"><span class="node" aria-hidden="true"></span>More products are in development. Each will appear here with its own page.</div>
-      </div>
-    </section>
-
-    <section class="block" id="approach" aria-labelledby="approach-h">
-      <div class="wrap">
-        <div class="head">
-          <p class="label">Approach</p>
-          <h2 id="approach-h">Built to be checked, not taken on trust.</h2>
-        </div>
-        <div class="principles">
-          <article><span class="k">self-hosted</span><h3>On your infrastructure</h3><p>Our software runs where your data already lives. Nothing is copied to us, and your data never leaves your network through us.</p></article>
-          <article><span class="k">open core</span><h3>Open at the core</h3><p>Community editions are open source, so you can read the code and try the product before you talk to anyone.</p></article>
-          <article><span class="k">disclosure</span><h3>Security in the open</h3><p>When we fix a security issue, we publish what it was, who was affected and what to do about it.</p></article>
-        </div>
       </div>
     </section>
 
@@ -299,7 +341,7 @@
         <div>
           <p class="label">Contact</p>
           <h2 id="contact-h">Talk to us.</h2>
-          <p>For an evaluation of TDB Enterprise, pricing, partnerships or anything else, write to us. A person reads every message.</p>
+          <p>For a product evaluation, pricing, partnerships or anything else, write to us. A person reads every message.</p>
         </div>
         <a class="mail" href="mailto:hello@jiracorp.co.in">hello@jiracorp.co.in</a>
       </div>
@@ -310,10 +352,11 @@
     <div class="wrap">
       <span class="wm">JIRAC<span class="node" aria-hidden="true"></span>RP</span>
       <nav aria-label="Footer">
-        <a href="https://tdb.jiracorp.co.in/">The Data-Bridge</a>
-        <a href="https://docs.tdb.jiracorp.co.in/">Docs</a>
-        <a href="https://docs.tdb.jiracorp.co.in/security/updates/">Security updates</a>
-        <a href="https://github.com/tdb-project">GitHub</a>
+        <a href="#about">Who we are</a>
+        <a href="#approach">What drives us</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/tdb-project" target="_blank" rel="noopener">GitHub</a>
       </nav>
       <span>© 2026 JIRACORP</span>
     </div>
