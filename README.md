@@ -1,10 +1,10 @@
 # jiracorp.co.in
 
-The JIRACorp company site: one static page that introduces the company and points to
+The JIRACORP company site: one static page that introduces the company and points to
 [The Data-Bridge](https://tdb.jiracorp.co.in/). Served by GitHub Pages from `main`; `CNAME` holds
 the domain.
 
-It uses the same design tokens and fonts as `tdb-landing`, so change them in both places.
+Dark infrastructure design with the Node wordmark (JIRAC◉RP: the O is a ring with a dot). Each product gets its own dot colour; The Data-Bridge uses indigo. Fonts: Geist and JetBrains Mono.
 No JavaScript and no build step. To preview it, run `python3 -m http.server` in this folder.
 
 What it says must be true today: no customer logos, testimonials or numbers that can't be proved.
