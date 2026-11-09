@@ -8,22 +8,51 @@
   <link rel="canonical" href="https://jiracorp.co.in/">
   <meta name="theme-color" content="#070B14">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JIRACORP">
   <meta property="og:url" content="https://jiracorp.co.in/">
   <meta property="og:title" content="JIRACORP">
   <meta property="og:description" content="Software that closes the gaps between data, people and AI, with security designed in. Makers of The Data-Bridge.">
   <meta property="og:image" content="https://jiracorp.co.in/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="JIRACORP: Software that closes the gaps between data, people and AI.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JIRACORP">
+  <meta name="twitter:description" content="Software that closes the gaps between data, people and AI, with security designed in.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "JIRACORP",
+    "url": "https://jiracorp.co.in/",
+    "logo": "https://jiracorp.co.in/apple-touch-icon.png",
+    "email": "hello@jiracorp.co.in",
+    "description": "An early-stage technology startup building secure, self-hosted products that close the gaps between data, people and AI.",
+    "sameAs": ["https://github.com/tdb-project"],
+    "owns": {
+      "@type": "SoftwareApplication",
+      "name": "The Data-Bridge",
+      "url": "https://tdb.jiracorp.co.in/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Linux (Docker)"
+    }
+  }
+  </script>
   <style>
+    @font-face { font-family: "Geist"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/geist-latin.woff2) format("woff2"); }
+    @font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 400 500; font-display: swap; src: url(fonts/jetbrains-mono-latin.woff2) format("woff2"); }
     /* Layout: dark infrastructure page on an engineering grid; the hero is the architecture diagram; one section per product so new products slot in. */
     :root {
       --bg: #070B14; --bg-2: #0B111E; --panel: #0E1628; --panel-2: #121C33;
       --line: #1B2740; --line-2: #2A3A5C;
       --ink: #E8EDF6; --dim: #A3AFC4; --faint: #7D8AA3;
-      --accent: #4D7CFF; --accent-hi: #7A9DFF; --accent-ink: #FFFFFF;
+      --accent: #4D7CFF; --accent-hi: #7A9DFF; --accent-ink: #FFFFFF; --btn: #3461E8; --btn-hi: #2A52CC;
       --tdb: #818CF8;
       --grid: rgba(255,255,255,.035);
       --ui: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -44,6 +73,8 @@
     .skip:focus { left: 16px; z-index: 20; }
 
     .wm { font-weight: 700; letter-spacing: .05em; white-space: nowrap; display: inline-flex; align-items: center; line-height: 1; color: var(--ink); text-decoration: none; }
+    .sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .wmt { display: inline-flex; align-items: center; }
     .node { --dot: var(--accent); display: inline-block; flex: none; width: .74em; height: .74em; border: .14em solid currentColor; border-radius: 50%; margin: 0 .04em; position: relative; }
     .node::after { content: ""; position: absolute; inset: 0; margin: auto; width: .2em; height: .2em; border-radius: 50%; background: var(--dot); }
 
@@ -65,6 +96,10 @@
     .menu-item b { display: block; font-size: .95rem; font-weight: 600; }
     .menu-item .ext { color: var(--faint); font-weight: 400; }
     .menu-item small { display: block; color: var(--dim); font-size: .84rem; margin-top: 2px; }
+    .mob { display: none; }
+    .bar nav .menu-link { display: block; padding: 11px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: .95rem; }
+    .bar nav .menu-link:hover { background: var(--panel-2); color: var(--ink); }
+    section[id] { scroll-margin-top: 80px; }
     .menu-soon { display: block; padding: 10px 12px 8px; border-top: 1px solid var(--line); color: var(--faint); font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; }
 
     .hero { position: relative; border-bottom: 1px solid var(--line); background-image: radial-gradient(800px 420px at 78% 10%, rgba(77,124,255,.16), transparent 70%), linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: auto, 32px 32px, 32px 32px; }
@@ -75,8 +110,8 @@
     .row { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn { display: inline-block; padding: 12px 20px; border-radius: 9px; font-weight: 600; font-size: .97rem; text-decoration: none; border: 1px solid var(--line-2); color: var(--ink); background: transparent; }
     .btn:hover { border-color: var(--dim); color: var(--ink); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-    .btn.primary:hover { background: var(--accent-hi); border-color: var(--accent-hi); }
+    .btn.primary { background: var(--btn); border-color: var(--btn); color: var(--accent-ink); }
+    .btn.primary:hover { background: var(--btn-hi); border-color: var(--btn-hi); color: var(--accent-ink); }
 
     .flow { display: grid; grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1.05fr) 56px minmax(0, 1fr); align-items: center; font-family: var(--mono); font-size: .82rem; }
     .flow .col { display: grid; gap: 8px; }
@@ -139,6 +174,10 @@
     .contact h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin-top: 14px; }
     .contact p { color: var(--dim); margin: 12px 0 0; max-width: 54ch; }
     .mail { font-family: var(--mono); font-size: clamp(1rem, 2.2vw, 1.4rem); color: var(--ink); text-decoration: none; border: 1px solid var(--line-2); border-radius: 10px; padding: 14px 20px; overflow-wrap: anywhere; }
+    .mailbox { display: grid; gap: 10px; justify-items: start; }
+    .copy { font: inherit; font-size: .88rem; color: var(--dim); background: none; border: 0; padding: 4px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .copy:hover { color: var(--ink); }
+    .copied { font-family: var(--mono); font-size: .78rem; color: #4ADE80; min-height: 1.2em; }
     .mail:hover { border-color: var(--accent); color: var(--ink); }
 
     footer { padding-block: 36px 44px; color: var(--faint); font-size: .9rem; }
@@ -181,6 +220,9 @@
     }
     @media (max-width: 640px) {
       .bar nav > a { display: none; }
+      .bar nav { gap: 14px; }
+      .mob { display: block; }
+      .mob summary { padding: 6px; border: 1px solid var(--line-2); border-radius: 8px; color: var(--ink); }
       .pillars, .tools, .metrics { grid-template-columns: 1fr; }
       .metrics div + div { border-left: 0; border-top: 1px solid var(--line); }
       .p-id .status { margin-left: 0; }
@@ -192,7 +234,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
     <div class="wrap bar">
-      <a class="wm" href="/" aria-label="JIRACORP home">JIRAC<span class="node" aria-hidden="true"></span>RP</a>
+      <a class="wm" href="/"><span class="sr">JIRACORP</span><span class="wmt" aria-hidden="true">JIRAC<span class="node"></span>RP</span></a>
       <nav aria-label="Primary">
         <details class="menu" id="products-menu">
           <summary>Products <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></summary>
@@ -207,6 +249,15 @@
         <a href="#about">Who we are</a>
         <a href="#approach">What drives us</a>
         <a href="#contact">Contact</a>
+        <details class="menu mob" id="site-menu">
+          <summary aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></summary>
+          <div class="menu-panel">
+            <a class="menu-link" href="#about">Who we are</a>
+            <a class="menu-link" href="#approach">What drives us</a>
+            <a class="menu-link" href="#products">Products</a>
+            <a class="menu-link" href="#contact">Contact</a>
+          </div>
+        </details>
       </nav>
     </div>
   </header>
@@ -282,7 +333,7 @@
               <div class="p-id">
                 <span class="node" aria-hidden="true"></span>
                 <b id="tdb-h">The Data-Bridge</b>
-                <span class="by">by <span class="wm">JIRAC<span class="node" aria-hidden="true"></span>RP</span></span>
+                <span class="by">by <span class="wm"><span class="sr">JIRACORP</span><span class="wmt" aria-hidden="true">JIRAC<span class="node"></span>RP</span></span></span>
                 <span class="status">Available</span>
               </div>
               <h3>Governed, audited AI access to the data you already have.</h3>
@@ -343,32 +394,29 @@
           <h2 id="contact-h">Talk to us.</h2>
           <p>For a product evaluation, pricing, partnerships or anything else, write to us. A person reads every message.</p>
         </div>
-        <a class="mail" href="mailto:hello@jiracorp.co.in">hello@jiracorp.co.in</a>
+        <div class="mailbox">
+          <a class="mail" href="mailto:hello@jiracorp.co.in">hello@jiracorp.co.in</a>
+          <button class="copy" type="button" id="copy-email" data-copy="hello@jiracorp.co.in">Copy address</button>
+          <span class="copied" id="copy-status" role="status" aria-live="polite"></span>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <span class="wm">JIRAC<span class="node" aria-hidden="true"></span>RP</span>
+      <span class="wm"><span class="sr">JIRACORP</span><span class="wmt" aria-hidden="true">JIRAC<span class="node"></span>RP</span></span>
       <nav aria-label="Footer">
         <a href="#about">Who we are</a>
         <a href="#approach">What drives us</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
+        <a href="/.well-known/security.txt">Report a security issue</a>
         <a href="https://github.com/tdb-project" target="_blank" rel="noopener">GitHub</a>
       </nav>
       <span>© 2026 JIRACORP</span>
     </div>
   </footer>
-  <script>
-    (function () {
-      var m = document.getElementById("products-menu");
-      if (!m) return;
-      document.addEventListener("click", function (e) { if (m.open && !m.contains(e.target)) m.open = false; });
-      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && m.open) { m.open = false; m.querySelector("summary").focus(); } });
-      m.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { m.open = false; }); });
-    })();
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
