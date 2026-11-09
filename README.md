@@ -1,6 +1,6 @@
 # jiracorp.co.in
 
-The JiraCorp company site: one static page that introduces the company and points to
+The JIRACorp company site: one static page that introduces the company and points to
 [The Data-Bridge](https://tdb.jiracorp.co.in/). Served by GitHub Pages from `main`; `CNAME` holds
 the domain.
 
