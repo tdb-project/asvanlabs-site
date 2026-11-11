@@ -1,8 +1,8 @@
-# JIRACORP security contact (RFC 9116)
-# To report a vulnerability in jiracorp.co.in or any JIRACORP product,
+# Asvan Labs security contact (RFC 9116)
+# To report a vulnerability in asvanlabs.com or any Asvan Labs product,
 # email us with a description and steps to reproduce. Please give us
 # reasonable time to fix it before disclosing it publicly.
-Contact: mailto:hello@jiracorp.co.in
-Expires: 2027-11-09T00:00:00.000Z
+Contact: mailto:hello@asvanlabs.com
+Expires: 2027-11-11T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://jiracorp.co.in/.well-known/security.txt
+Canonical: https://asvanlabs.com/.well-known/security.txt
