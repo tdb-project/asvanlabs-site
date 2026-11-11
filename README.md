@@ -11,9 +11,11 @@ domain now redirects here.
 
 ## Design
 
-- **Logo:** the app tile, a white `</>` with a teal slash on a rounded navy-to-indigo square
-  (`logo-mark.svg`), beside "Asvan Labs" set in Geist 600. The same tile is the favicon, the Apple icon
-  and the GitHub/social avatar.
+- **Logo:** the **<A> mark** (from 2026-11-11): an uppercase A between the code brackets `<` and `>`, white
+  on a rounded navy-to-indigo square, with a teal crossbar (`logo-mark.svg`; `favicon.svg` has heavier
+  strokes for small sizes). It replaced a plain `</>` the same day because that symbol is common. Shown
+  beside "Asvan Labs" in Geist 600. The same tile is the favicon, the Apple icon and the GitHub, LinkedIn
+  and social avatar.
 - **Colours:** trust (navy `#0B1B3F`, blue `#2563EB`), intelligence (indigo `#6366F1`), progress
   (teal `#2DD4BF`). Buttons are blue, small labels teal.
 - **Look:** dark infrastructure style on an engineering grid. Fonts: Geist and JetBrains Mono, self-hosted.
