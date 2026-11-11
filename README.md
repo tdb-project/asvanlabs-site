@@ -41,6 +41,8 @@ domain now redirects here.
 - `fonts/`: Latin subsets of Geist and JetBrains Mono (OFL, see `fonts/OFL.txt`).
 - `logo-mark.svg`, `favicon.svg` (same tile, heavier strokes for small sizes), `favicon-32.png`,
   `apple-touch-icon.png` (square, iOS rounds it), `og.png` (1200×630 social card).
+- `brand/`: LinkedIn cover (`linkedin-cover-1128x191.png`, and `-2256x382.png` for sharp displays) and its
+  source `linkedin-cover.html` (render at 1128×191; keep text clear of the lower-left, where LinkedIn puts the logo).
 - `.well-known/security.txt`: the security contact (RFC 9116). **Renew `Expires` before 2027-11-11.**
 - `.nojekyll`: needed so GitHub Pages serves `.well-known/`.
 - `robots.txt`, `sitemap.xml`, `CNAME`.
