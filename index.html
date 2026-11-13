@@ -100,6 +100,8 @@
     .bar nav .menu-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px; border-radius: 8px; color: var(--ink); text-decoration: none; }
     .bar nav .menu-item:hover { background: var(--panel-2); color: var(--ink); }
     .menu-item .node { font-size: 1.25rem; margin-top: 2px; color: var(--ink); }
+    .pmark { flex: none; display: block; }
+    .menu-item .pmark { margin-top: 1px; }
     .menu-item b { display: block; font-size: .95rem; font-weight: 600; }
     .menu-item .ext { color: var(--faint); font-weight: 400; }
     .menu-item small { display: block; color: var(--dim); font-size: .84rem; margin-top: 2px; }
@@ -256,7 +258,7 @@
           <summary>Products <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></summary>
           <div class="menu-panel">
             <a class="menu-item" href="https://tdb.asvanlabs.com/" target="_blank" rel="noopener">
-              <span class="node" style="--dot: var(--tdb)" aria-hidden="true"></span>
+              <img class="pmark" src="tdb-mark.svg" alt="" width="22" height="22">
               <span><b>The Data-Bridge <span class="ext" aria-hidden="true">↗</span></b><small>Governed, audited AI access to your data</small></span>
             </a>
             <span class="menu-soon">More products coming soon</span>
@@ -350,7 +352,7 @@
           <div class="p-top">
             <div class="p-main">
               <div class="p-id">
-                <span class="node" aria-hidden="true"></span>
+                <img class="pmark" src="tdb-mark.svg" alt="" width="34" height="34">
                 <b id="tdb-h">The Data-Bridge</b>
                 <span class="by">by <span class="wm"><img src="logo-mark.svg" alt="" width="20" height="20">Asvan Labs</span></span>
                 <span class="status">Available</span>
@@ -385,7 +387,7 @@
               </div>
               <div class="wire" aria-hidden="true"></div>
               <div class="core">
-                <span class="name"><span class="node" aria-hidden="true"></span>The Data-Bridge</span>
+                <span class="name"><img class="pmark" src="tdb-mark.svg" alt="" width="22" height="22">The Data-Bridge</span>
                 <ul>
                   <li>read-only SQL</li>
                   <li>column &amp; row policies</li>

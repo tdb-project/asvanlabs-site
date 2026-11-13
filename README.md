@@ -20,8 +20,9 @@ domain now redirects here.
   (teal `#2DD4BF`). Buttons are blue, small labels teal.
 - **Look:** dark infrastructure style on an engineering grid. Fonts: Geist and JetBrains Mono, self-hosted.
 - **Sections:** hero, Who we are, What drives us, Products, Latest, Contact. The header's Products menu opens each
-  product's own site in a new tab. Products keep their own marks (The Data-Bridge: the ring with an
-  indigo dot) and appear as "<Product> by Asvan Labs" on this site.
+  product's own site in a new tab. Products keep their own marks, on the same tile as the Asvan Labs `<A>` (The Data-Bridge:
+  a white arch over a teal deck on two piers, `tdb-mark.svg`, from 2026-11-13; the same SVG is the
+  docs logo and, inline, the tdb.asvanlabs.com header, footer, 404 and favicon) and appear as "<Product> by Asvan Labs" on this site.
 - **Adding a product:** one item in the Products menu and one card in the Products section.
 - **Latest:** newest first, four entries, each something that was run or released (never a plan), dated, with a link to the evidence. Drop the oldest when adding one.
 
