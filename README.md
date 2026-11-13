@@ -19,10 +19,11 @@ domain now redirects here.
 - **Colours:** trust (navy `#0B1B3F`, blue `#2563EB`), intelligence (indigo `#6366F1`), progress
   (teal `#2DD4BF`). Buttons are blue, small labels teal.
 - **Look:** dark infrastructure style on an engineering grid. Fonts: Geist and JetBrains Mono, self-hosted.
-- **Sections:** hero, Who we are, What drives us, Products, Contact. The header's Products menu opens each
+- **Sections:** hero, Who we are, What drives us, Products, Latest, Contact. The header's Products menu opens each
   product's own site in a new tab. Products keep their own marks (The Data-Bridge: the ring with an
   indigo dot) and appear as "<Product> by Asvan Labs" on this site.
 - **Adding a product:** one item in the Products menu and one card in the Products section.
+- **Latest:** newest first, four entries, each something that was run or released (never a plan), dated, with a link to the evidence. Drop the oldest when adding one.
 
 ## Rules for the copy
 
