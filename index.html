@@ -373,16 +373,16 @@
               <div><dt>Editions</dt><dd>Community, free and open source (AGPLv3). Enterprise, under a commercial licence.</dd></div>
               <div><dt>Runs on</dt><dd>Your own servers, as a Docker image</dd></div>
               <div><dt>Measured</dt><dd>10,412 → 6,868 tokens for 100 rows with Lean Mode</dd></div>
-              <div><dt>Tested end to end</dt><dd>With Claude (claude.ai, Desktop and Code), VS Code, Metabase, DBeaver and psql, against real PostgreSQL, MySQL, SQL Server and Snowflake. <a href="https://tdb.asvanlabs.com/#proof">The evidence ↗</a></dd></div>
+              <div><dt>Tested end to end</dt><dd>With Claude (claude.ai, Desktop and Code), VS Code, Metabase, DBeaver and psql, against real PostgreSQL, MySQL, SQL Server, Snowflake and ClickHouse. <a href="https://tdb.asvanlabs.com/#proof">The evidence ↗</a></dd></div>
             </dl>
           </div>
           <div class="p-flow">
-            <div class="flow" role="img" aria-label="Diagram: data sources such as PostgreSQL, Snowflake, Parquet and CSV flow into The Data-Bridge, which applies policy and audit, then serves AI agents over MCP, applications over REST and BI tools over the PostgreSQL wire protocol.">
+            <div class="flow" role="img" aria-label="Diagram: data sources such as PostgreSQL, Snowflake, ClickHouse, Parquet and CSV flow into The Data-Bridge, which applies policy and audit, then serves AI agents over MCP, applications over REST and BI tools over the PostgreSQL wire protocol.">
               <div class="col">
                 <span class="h">Your data</span>
                 <span class="chip">PostgreSQL <em>db</em></span>
                 <span class="chip">MySQL · SQL Server <em>db</em></span>
-                <span class="chip">Snowflake <em>warehouse</em></span>
+                <span class="chip">Snowflake · ClickHouse <em>warehouse</em></span>
                 <span class="chip">CSV · Parquet · DuckDB <em>file</em></span>
               </div>
               <div class="wire" aria-hidden="true"></div>
@@ -417,10 +417,10 @@
           <p>Every claim here is something we ran, not something we plan.</p>
         </div>
         <ol class="news">
+          <li><time datetime="2026-11-20">20 Nov 2026</time><div><h3>ClickHouse joins the sources</h3><p>An analytics database in ClickHouse can now be read by agents and BI tools through The Data-Bridge, read-only on every request, under the same rules and audit log as the rest.</p><a href="https://docs.tdb.asvanlabs.com/connectors/clickhouse/">ClickHouse connector ↗</a></div></li>
           <li><time datetime="2026-11-13">13 Nov 2026</time><div><h3>The Data-Bridge works as a Claude custom connector</h3><p>People sign in from claude.ai and Claude Desktop and ask questions of their own data through The Data-Bridge, unmodified, with every call in the audit log.</p><a href="https://docs.tdb.asvanlabs.com/auth/oauth/#connecting-claude-desktop">How to connect ↗</a></div></li>
           <li><time datetime="2026-11-10">10 Nov 2026</time><div><h3>Tested against a real Snowflake account</h3><p>Queries, data types, paging, streaming, timeouts, column and row rules, views and query approvals, run against a live account. What it found was fixed and released the same day.</p><a href="https://docs.tdb.asvanlabs.com/connectors/snowflake/">Snowflake connector ↗</a></div></li>
-          <li><time datetime="2026-11-06">6 Nov 2026</time><div><h3>Query approvals and tenants</h3><p>A person can be required to approve an agent's query before it reads sensitive columns, and several teams or customers can share one deployment, each with its own audit log.</p><a href="https://docs.tdb.asvanlabs.com/release-notes/">Release notes ↗</a></div></li>
-          <li><time datetime="2026-09">Since Sep 2026</time><div><h3>Seventeen security updates, all published</h3><p>Each one says what was exposed and what to do, including the ones we found ourselves and the ones independent reviewers found.</p><a href="https://docs.tdb.asvanlabs.com/security/updates/">Security updates ↗</a></div></li>
+          <li><time datetime="2026-09">Since Sep 2026</time><div><h3>Twenty-nine security updates, all published</h3><p>Each one says what was exposed and what to do, including the ones we found ourselves and the ones independent reviewers found.</p><a href="https://docs.tdb.asvanlabs.com/security/updates/">Security updates ↗</a></div></li>
         </ol>
       </div>
     </section>
